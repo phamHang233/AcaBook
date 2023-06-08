@@ -1,0 +1,52 @@
+<div class="popup-container">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class=" first">
+
+      <h2 class="title">Địa chỉ mới</h2>
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="addressForm">
+
+      <input formControlName="userName" type="text" id="userName" class=" second zero-raduis" name="firstName"
+        placeholder="Họ và tên">
+      <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+        <div *ngIf="f.userName.errors.required">Tên không được để trống</div>
+      </div>
+      <input formControlName="phone" type="text" id="phone" class=" second zero-raduis" name="lastName"
+        placeholder="SĐT">
+      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+        <div *ngIf="f.phone.errors.required">SĐT không được để trống</div>
+      </div>
+      <input formControlName="guild" type="text" id="guild" class=" second zero-raduis" name="email"
+        placeholder="Xã/phường/thị trấn">
+      <div *ngIf="submitted && f.guild.errors" class="invalid-feedback">
+        <div *ngIf="f.guild.errors.required">Xã không được để trống</div>
+      </div>
+      <input formControlName="district" type="text" id="district" class=" third zero-raduis" name="register"
+        placeholder="Quận/huyện">
+      <div *ngIf="submitted && f.district.errors" class="invalid-feedback">
+        <div *ngIf="f.district.errors.required">Huyện không được để trống</div>
+
+      </div>
+      <input formControlName="province" type="text" id="province" class=" second zero-raduis" name="firstName"
+        placeholder="Tỉnh/Thành phố">
+      <div *ngIf="submitted && f.province.errors" class="invalid-feedback">
+        <div *ngIf="f.province.errors.required">Tên không được để trống</div>
+      </div>
+      <input formControlName="home" type="text" id="home" class=" second zero-raduis" name="firstName"
+        placeholder="Địa chỉ cụ thể">
+      <div *ngIf="submitted && f.home.errors" class="invalid-feedback">
+        <div *ngIf="f.home.errors.required">Tên không được để trống</div>
+      </div>
+
+    </form>
+    <div class="popup-btn-wrap">
+      <button (click)="closePopup()" class=" popup-btn-finish" type="button">Trở về</button>
+      <button (click)="finish()" class=" popup-btn-finish" type="button">Hoàn thành</button>
+    </div>
+  </div>
+</div>

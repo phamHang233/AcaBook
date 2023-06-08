@@ -1,0 +1,55 @@
+<div class="app">
+
+  <section class="menu-slide">
+    <div class="container" *ngIf="books.length!=0">
+      <div>
+        <a class="search-tab">
+          Kết quả tìm kiếm:
+        </a>
+      </div>
+      <div class="row product__panel">
+        <div class="product__panel-item col-lg-3 col-md-4 col-sm-6" *ngFor="let book of books">
+          <div class="product__panel-item-wrap">
+            <div class="product__panel-img-wrap">
+              <img src="{{book.imagePath}}" alt="" class="product__panel-img">
+            </div>
+            <h3 class="product__panel-heading">
+              <a routerLink="/book/details/{{book.id}}" class="product__panel-link">
+                {{book.bookName}}
+              </a>
+            </h3>
+            <div class="rating">
+              <span class="rating-value">{{ book.star }}
+                <i class="fas fa-star"></i>
+              </span>
+            </div>
+
+            <div class="product__panel-price">
+              <span class="product__panel-price-old">
+                {{book.dailyPrice}}đ
+              </span>
+              <span class="product__panel-price-current">
+                {{book.salePrice}}đ
+              </span>
+            </div>
+
+            <div class="product__panel-price-sale-off">
+              {{(100- book.salePrice*100/ book.dailyPrice) | number: '1.1-1' }}%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="books.length==0">
+      <a class="search-tab">
+        Kết quả tìm kiếm:
+
+      </a><br>
+      <div>
+        <a style="font-size:2rem; margin-left: 3rem; color:  var(--primary-color);"> Không tìm thấy kết quả nào!</a>
+      </div>
+    </div>
+  </section>
+</div>
