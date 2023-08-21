@@ -1,0 +1,19 @@
+<div class="sidebar">
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <a class="sidebar-link" (click)="clickedMenu($event)" id="nav-link1"> Quản lý sản phẩm</a>
+            <div [ngbCollapse]="parentId == 'nav-link1'">
+                <ul class="submenu" routerLink="/adminBooks">
+                    <li><a routerLinkActive="active">Tất cả sản phẩm</a></li>
+
+                </ul>
+                <ul class="submenu" routerLink="/addBook">
+                    <li><a routerLinkActive="active">Thêm sản phẩm</a></li>
+
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</div>

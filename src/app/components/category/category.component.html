@@ -1,0 +1,153 @@
+<app-nav></app-nav>
+<!-- category 1: Sách trong nước-->
+<section id='category1' class="product__love">
+    <div class="container">
+        <div class="row bg-white">
+            <div class="col-lg-12 col-md-12 col-sm-12 product__love-title">
+                <h2 class="product__love-heading upper">
+                    Sách Tiếng Việt
+                </h2>
+            </div>
+        </div>
+        <div class="row bg-white">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let book of books">
+
+                    <ng-template carouselSlide *ngIf="book.category=='Sách Tiếng Việt'">
+                        <div class="slide-container ">
+                            <div routerLink="/book/details/{{book._id}}">
+                                <div class="bestselling__product-img-box">
+                                    <img src="{{book.imagePath}}" class="bestselling__product-img">
+                                </div>
+                                <div class="bestselling__product-text">
+
+                                    <!-- <a class="bestselling__product-link">{{book.bookName}}</a>
+
+
+                                    <div class="bestselling__product-rate-wrap">
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                    </div>
+
+                                    <span class="bestselling__product-price">
+                                        {{book.salePrice}}
+                                    </span> -->
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-template>
+
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+    </div>
+</section>
+
+<!-- category 2: Sách nước ngoài-->
+<section id='category2' class="product__love">
+    <div class="container">
+        <div class="row bg-white">
+            <div class="col-lg-12 col-md-12 col-sm-12 product__love-title">
+                <h2 class="product__love-heading upper">
+                    Sách Nước Ngoài
+                </h2>
+            </div>
+        </div>
+        <div class="row bg-white">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let book of books">
+
+                    <ng-template carouselSlide *ngIf="book.category=='Sách Nước Ngoài'">
+                        <div class="slide-container ">
+                            <div routerLink="/book/details/{{book._id}}">
+                                <div class="bestselling__product-img-box">
+                                    <img src="{{book.imagePath}}" class="bestselling__product-img">
+                                </div>
+                                <div class="bestselling__product-text">
+
+                                    <a class="bestselling__product-link">{{book.bookName}}</a>
+
+
+                                    <div class="bestselling__product-rate-wrap">
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                    </div>
+
+                                    <span class="bestselling__product-price">
+                                        {{book.salePrice}}
+                                    </span>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-template>
+
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+    </div>
+</section>
+
+<!-- category 3: Manga - Comics-->
+<section id='category3' class="product__love">
+    <div class="container">
+        <div class="row bg-white">
+            <div class="col-lg-12 col-md-12 col-sm-12 product__love-title">
+                <h2 class="product__love-heading upper">
+                    Manga - Comics
+                </h2>
+            </div>
+        </div>
+        <div class="row bg-white">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let book of books">
+
+                    <ng-template carouselSlide *ngIf="book.category=='Manga'">
+                        <div class="slide-container ">
+                            <div routerLink="/book/details/{{book._id}}">
+                                <div class="bestselling__product-img-box">
+                                    <img src="{{book.imagePath}}" class="bestselling__product-img">
+                                </div>
+                                <div class="bestselling__product-text">
+
+                                    <a class="bestselling__product-link">{{book.bookName}}</a>
+
+
+                                    <div class="bestselling__product-rate-wrap">
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                        <i class="fas fa-star bestselling__product-rate"></i>
+                                    </div>
+
+                                    <span class="bestselling__product-price">
+                                        {{book.salePrice}}
+                                    </span>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-template>
+
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+    </div>
+</section>
+
+
+<button onclick="topFunction()" id="myBtn-scroll" title="Go to top"><i class="fas fa-chevron-up"></i></button>

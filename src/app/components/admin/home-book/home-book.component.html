@@ -1,0 +1,82 @@
+<div class="header__top">
+    <div class="container">
+        <section class="row flex">
+            <div class="col-lg-5 col-md-0 col-sm-0 heade__top-left">
+                <span>AcaBook - Cội nguồn của tri thức</span>
+            </div>
+            <nav class="col-lg-7 col-md-0 col-sm-0 header__top-right">
+                <ul class="header__top-list">
+                    <li>
+                        <a routerLink="/admin" class="header__top-link">
+
+                            Admin</a>
+                    </li>
+
+                </ul>
+
+                <div>
+
+                    <li class="header__top-item" aria-expanded="false">
+                        <a (click)="logout()" id="auth" type="button" class="header__top-link">Đăng xuất</a>
+                    </li>
+
+                </div>
+
+            </nav>
+        </section>
+    </div>
+</div>
+<div class="row app-container">
+    <app-sidebar> </app-sidebar>
+    <div>
+        <div>
+            <div class=" title">
+                <h1 class="product-tab upper">
+                    Danh sách sản phẩm
+                </h1>
+            </div>
+            <form action="" method="POST" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                <div class="col-lg-6 col-md-7 col-sm-0 search">
+
+                    <input type="text" class="search-input" placeholder="Tìm kiếm" formControlName="name">
+                    <button class="header__search-btn">
+                        <div class="search-icon-wrap">
+                            <i class="fas fa-search header__search-icon"></i>
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class=" product__panel">
+
+
+            <div *ngFor="let book of allBooks" class="product__panel-item1  col-lg-3 col-md-4 col-sm-6">
+
+                <div class="product__panel-item-wrap1">
+                    <div class="bestselling__product-img-box">
+                        <img src="{{book.imagePath}}" class="bestselling__product-img">
+                    </div>
+                    <div class="bestselling__product-text">
+
+                        <a class="bestselling__product-link">{{book.bookName}}</a>
+                        <span class="bestselling__product-price">
+                            {{book.salePrice.toLocaleString()}}đ
+                        </span>
+                        <span class="edit" routerLink="/editBook/{{book._id}}">
+                            <i class="fas fa-pen"></i>
+                        </span>
+                        <span class="edit" (click)="onDelete(book._id)">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </span>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

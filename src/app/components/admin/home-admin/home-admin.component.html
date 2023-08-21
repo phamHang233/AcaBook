@@ -1,0 +1,96 @@
+<div class="header__top">
+    <div class="container">
+        <section class="row flex">
+            <div class="col-lg-5 col-md-0 col-sm-0 heade__top-left">
+                <span>AcaBook - Cội nguồn của tri thức</span>
+            </div>
+            <nav class="col-lg-7 col-md-0 col-sm-0 header__top-right">
+                <ul class="header__top-list">
+                    <li>
+                        <a routerLink="/admin" class="header__top-link">
+
+                            Admin</a>
+                    </li>
+
+                </ul>
+
+                <div>
+
+                    <li class="header__top-item" aria-expanded="false">
+                        <a (click)="logout()" id="auth" type="button" class="header__top-link">Đăng xuất</a>
+                    </li>
+
+                </div>
+
+            </nav>
+        </section>
+    </div>
+</div>
+<div class=' row app-container'>
+    <app-sidebar></app-sidebar>
+    <div>
+        <div class="row content-container">
+            <div class="col-sm-6 col-lg-3">
+                <div class="card mb-4 text-white bg-primary">
+                    <div class="card-body">
+                        <div>
+                            <div class=" fw-semibold">{{numOrder}} </div>
+                            <div class="fw-normal">Đơn hàng</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.col-->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card mb-4 text-white bg-info">
+                    <div class="card-body pb-0 d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="fw-semibold"> {{uniqueCustomerIds}} </div>
+                            <div class="fw-normal">Khách hàng</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.col-->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card mb-4 text-white bg-warning">
+                    <div class="card-body pb-0 d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class=" fw-semibold">${{totalPrice}} </div>
+                            <div class="fw-normal">Thu Nhập</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="chart-body">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h4 class="card-title mb-0">Doanh số bán hàng</h4>
+                    <div class="text-medium-emphasis">Năm 2023</div>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="chart-container">
+                    <canvas #chartCanvasOrder>{{lineChart}}</canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas #chartCanvasPrice></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

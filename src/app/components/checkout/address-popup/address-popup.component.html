@@ -1,0 +1,38 @@
+<div class="popup-container">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class=" first">
+
+            <h2 class="title">Địa chỉ đặt hàng</h2>
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="addressForm">
+
+            <input formControlName="userName" type="text" id="userName" class=" second zero-raduis" name="firstName"
+                placeholder="Họ và tên">
+            <input formControlName="phone" type="text" id="phone" class=" second zero-raduis" name="lastName"
+                placeholder="SĐT">
+
+            <input formControlName="guild" type="text" id="guild" class=" second zero-raduis" name="email"
+                placeholder="Xã/phường/thị trấn">
+
+            <input formControlName="district" type="text" id="district" class=" third zero-raduis" name="register"
+                placeholder="Quận/huyện">
+
+            <input formControlName="province" type="text" id="province" class=" second zero-raduis" name="firstName"
+                placeholder="Tỉnh/Thành phố">
+
+            <input formControlName="home" type="text" id="home" class=" second zero-raduis" name="firstName"
+                placeholder="Địa chỉ cụ thể">
+
+
+        </form>
+        <div class="popup-btn-wrap">
+            <button (click)="closePopup()" class=" popup-btn-finish" type="button">Trở về</button>
+            <button (click)="finish()" class=" popup-btn-finish" type="button">Hoàn thành</button>
+        </div>
+    </div>
+</div>

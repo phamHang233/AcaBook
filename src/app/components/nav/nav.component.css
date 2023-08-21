@@ -1,0 +1,7 @@
+.header__top {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ef2317;
+}

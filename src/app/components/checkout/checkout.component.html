@@ -1,0 +1,99 @@
+<app-nav></app-nav>
+<section class="checkout">
+    <div class="container">
+        <div role="main" class="container">
+            <div class="header">
+                Thanh Toán
+            </div>
+
+            <div class="address-wrap">
+                <div class="address-title">
+                    Địa chỉ nhận hàng
+                </div>
+                <div class="address-content-wrap">
+
+                    <div class="address-content" *ngIf="address!=undefined">
+                        <div class="address-content-1"> {{address.userName}} ({{address.phone}})</div>
+                        <div class="address-content-2"> {{address.home}} {{address.guild}}, {{address.district}},
+                            {{address.province}}
+                        </div>
+                    </div>
+                    <div class="address-change">
+
+                        <button type="button" (click)="changeAddress()" class="address-change">Thay đổi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-wrap">
+                <div class="product-tab">
+                    <div style="color:black; width:  46.27949%; padding:6rem; "> Sản phẩm</div>
+                    <div style="width: 15.88022%; font-size: 1.4rem;"> Đơn giá</div>
+                    <div style="width: 15.4265%;font-size: 1.4rem;"> Số lượng</div>
+                    <div style="width: 10.43557%; font-size: 1.4rem; margin-left:10rem"> Thành tiền</div>
+
+                </div>
+            </div>
+            <div class="product-wrap">
+                <div class=" cart__product" *ngFor="let cartItem of cartItems">
+
+                    <div class="cart__product-item">
+                        <h2 class="cart__product-item-name">
+                            <img src="{{cartItem.book.imagePath}}" alt="" class="cart__product-item-image">
+                            <span class="cart__product-item-name">
+                                {{cartItem.book.bookName }}
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="cart__product-unit-price-wrap">
+                        <div>
+                            <span class="cart__product-unit-price-old">
+                                {{cartItem.book.dailyPrice.toLocaleString()}}đ
+                            </span>
+                            <span style="font-size: 15px;">{{cartItem.book.salePrice.toLocaleString()}}đ </span>
+                        </div>
+                    </div>
+                    <div class="cart__product-quantity-wrap">
+
+                        <div class="cart__product-unit-price-wrap">
+
+                            {{cartItem.quantity}}
+
+                        </div>
+                    </div>
+                    <div class="cart__product-total">
+                        <span> {{(cartItem.quantity*cartItem.book.salePrice).toLocaleString()}}đ</span>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="product-wrap">
+                <div class="payment-title">
+                    Phương thức thanh toán
+                    <div style="margin-left:3rem; align-items: center;">
+                        <button type="button" class="product__main-info-cart-btn" aria-disabled="= false">
+                            Thanh toán khi nhận hàng
+                        </button>
+                    </div>
+                </div>
+                <div class="payment-total">
+                    <div class="payment-total-name"> Tổng tiền hàng</div>
+                    <div class="payment-total-money"> {{totalPay.toLocaleString()}}đ </div>
+                    <div class="payment-total-ship-name"> Phí vận chuyển</div>
+                    <div class="payment-total-ship-money"> 15,000đ</div>
+                    <div class="payment-allTotal-name"> Tổng thanh toán</div>
+                    <div class="payment-allTotal-money"> {{(totalPay+15000).toLocaleString()}}đ</div>
+
+                </div>
+                <div style="right: 0; text-align: right;">
+                    <button type="button" (click)="finish()" class="payment-agree" aria-disabled="= false">Mua
+                        ngay</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,106 @@
+<div class="header__top">
+    <div class="container">
+        <section class="row flex">
+            <div class="col-lg-5 col-md-0 col-sm-0 heade__top-left">
+                <span>AcaBook - Cội nguồn của tri thức</span>
+            </div>
+            <nav class="col-lg-7 col-md-0 col-sm-0 header__top-right">
+                <ul class="header__top-list">
+                    <li>
+                        <a routerLink="/admin" class="header__top-link">
+
+                            Admin</a>
+                    </li>
+
+                </ul>
+
+                <div>
+
+                    <li class="header__top-item" aria-expanded="false">
+                        <a (click)="logout()" id="auth" type="button" class="header__top-link">Đăng xuất</a>
+                    </li>
+
+                </div>
+
+            </nav>
+        </section>
+    </div>
+</div>
+<div class="row app-container" *ngIf="book!=undefined">
+    <app-sidebar> </app-sidebar>
+    <div>
+        <div class="card mb-4" *ngIf="book!=undefined">
+            <div class="card-header"><strong>Thông tin cơ bản</strong></div>
+            <div class="card-body">
+                <div class="example">
+                    <div [formGroup]="bookFormEdit">
+                        <div class="tab-content ">
+                            <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1000">
+                                <div class=" form-item ">
+                                    <label class="form-label" for="exampleFormControlInput1">Tên sản phẩm</label>
+                                    <input formControlName="bookName" class="form-control" title="Nhập tên sách"
+                                        placeholder="tên sách">
+                                </div>
+                                <div class=" form-item ">
+                                    <label class="form-label" for="exampleFormControlInput1">Tác giả</label>
+                                    <input formControlName="author" class="form-control">
+                                </div>
+
+                                <div class=" form-item ">
+                                    <label class="form-label" for="exampleFormControlInput1">Giá Niêm Yết</label>
+                                    <input formControlName="dailyPrice" class="form-control">
+                                </div>
+                                <div class=" form-item ">
+                                    <label class="form-label" for="exampleFormControlInput1">Giá Bán</label>
+                                    <input class="form-control" formControlName="salePrice">
+                                </div>
+                                <div class=" form-item ">
+                                    <label class="form-label" for="exampleFormControlInput1">Hình ảnh</label>
+                                    <div class="container image-manage">
+                                        <div class="item-image-wrap">
+                                            <img src="{{book.imagePath}}" class="item-image">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class=" form-item  ">
+                                    <label class="form-label">Ngành hàng</label>
+                                    <div>
+                                        <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1000">
+                                            <select formControlName="category" class="form-select"
+                                                aria-label="Default select example">
+                                                <option style="font-size: 1.3rem;" selected>{{book.category}}</option>
+                                                <option style="font-size: 1.3rem;" value="1"
+                                                    *ngIf=" book.category!='Sách Tiếng Việt'">Sách Tiếng Việt</option>
+                                                <option style="font-size: 1.3rem;" value="2"
+                                                    *ngIf=" book.category!='Manga'">Manga</option>
+                                                <option style="font-size: 1.3rem;" value="3"
+                                                    *ngIf=" book.category!='Sách Nước Ngoài'">Sách nước ngoài</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label class="form-label" for="exampleFormControlTextarea1">Mô tả sản phẩm</label>
+                                    <textarea value="{{book.description}}" formControlName="description"
+                                        class="form-control-des" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btnn">
+        <div class="btn-wrap">
+
+            <button type="button" routerLink="/adminBooks" class="btn btn-item">Hủy</button>
+
+
+            <button type="button" class="btn btn-item-1" (click)="update()">Cập nhật</button>
+        </div>
+
+    </div>
+</div>

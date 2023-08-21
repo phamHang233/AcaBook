@@ -1,0 +1,123 @@
+/* -----header-------- */
+.header-bar {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 56px;
+    max-height: 56px;
+    z-index: 6666;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(74, 74, 78, .12);
+    box-shadow: 0 1px 4px 0 rgba(74, 74, 78, .12);
+    color: var(--primary-color);
+}
+
+.header__top {
+    height: 60px;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    background: #ef2317;
+    z-index: 6666;
+}
+
+/* --------end header--------- */
+
+.product__panel {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 250px;
+    top: 150px;
+}
+
+.app-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-top: 56px;
+}
+
+/* -----book details------- */
+.product__panel-item-wrap1 {
+    background: var(--white-color);
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.product__panel-item1 {
+    margin-bottom: 2rem;
+    padding: 0 0.75rem;
+    cursor: pointer;
+}
+
+.product__panel1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2.2rem 0 0;
+}
+
+.title {
+    margin: 10px 250px;
+    font-size: 2.5rem;
+
+}
+
+.edit {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.edit:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.search {
+    left: 250px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.search-icon-wrap {
+    width: 4rem;
+    height: 4rem;
+    background: #ef2317;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: .2rem;
+}
+
+.product-tab {
+    background-color: white;
+    color: var(--primary-color);
+    width: 100%;
+    height: 55px;
+    font-size: 2.7rem;
+
+    padding: 1.5rem;
+    font-weight: 600px;
+    display: inline-block;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
+}
+
+.search-input {
+    height: 4rem;
+    width: 15rem;
+    font-size: 1.4rem;
+    outline: none;
+    border: 1px solid black;
+    padding: 0 12px;
+}

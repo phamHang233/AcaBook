@@ -1,0 +1,130 @@
+.product__panel {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2.2rem;
+    margin-left: 2rem;
+    padding-top: 1rem;
+
+}
+
+.panel-item-wrap {
+    background: var(--white-color);
+    padding: 1rem 1.5rem;
+    position: relative;
+    height: 370px;
+    width: 270px;
+}
+
+.product__panel-item {
+    margin-bottom: 2rem;
+    padding: 0 0.75rem;
+    cursor: pointer;
+}
+
+.product__panel-img {
+    max-width: 100%;
+    transition: 0.3s;
+}
+
+
+
+.product__panel-heading {}
+
+.product__panel-link {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    margin-top: 4rem;
+    transition: 0.2s;
+    height: 3.8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.product__panel-link:hover {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.rating {
+    color: #ffd700;
+    margin-left: 0.5rem;
+    /* Màu vàng cho ngôi sao được đánh giá */
+    font-size: 27px;
+    /* Kích thước của ngôi sao */
+}
+
+.star {
+    color: gold;
+}
+
+.panel-link {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    margin-top: 3.2rem;
+    transition: 0.2s;
+    height: 5.1rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.product__content {
+    background: #efefef;
+    width: 100vw;
+    /* align-items: center;
+    justify-content: center; */
+
+}
+
+.product__panel-price-sale-off {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 1rem;
+    color: var(--white-color);
+}
+
+.search-tab {
+    background-color: white;
+    width: 100%;
+    height: 55px;
+    font-size: 2rem;
+    margin-left: 55px;
+    padding: 1.5rem;
+    font-weight: 400px;
+    display: inline-block;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
+}
+
+.no-product {
+    font-size: 3.5rem;
+    padding: 2rem;
+    color: var(--primary-color);
+    align-items: center;
+    text-align: center;
+}
+
+.icon {
+    font-size: 6rem;
+    color: var(--white-color);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}

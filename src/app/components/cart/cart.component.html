@@ -1,0 +1,100 @@
+<app-nav></app-nav>
+<div class="container">
+    <div>
+        <div class="cart__tab">
+            <div style="color:black; width:  46.27949%; padding:6rem; "> Sản phẩm</div>
+            <div style="width: 15.88022%;"> Đơn giá</div>
+            <div style="width: 15.4265%;"> Số lượng</div>
+            <div style="width: 10.43557%;"> Số tiền</div>
+            <div style="width: 12.70417%;"> Thao tác</div>
+
+        </div>
+        <div *ngIf="cartItems">
+            <div *ngFor="let cartItem of cartItems">
+                <div class=" cart__product" *ngIf="cartItem.quantity>0">
+                    <div>
+                        <input type="checkbox" [(ngModel)]="cartItem.choosed" (change)="toggleCheckBox(cartItem)">
+                        <label for="myCheckbox"></label>
+                    </div>
+                    <div class="cart__product-item">
+                        <h2 class="cart__product-item-name">
+                            <img src="{{cartItem.book.imagePath}}" alt="" class="cart__product-item-image">
+                            <span class="cart__product-item-name">
+                                {{cartItem.book.bookName }}
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="cart__product-unit-price-wrap">
+                        <div>
+                            <span class="cart__product-unit-price-old">
+                                {{(1*cartItem.book.dailyPrice).toLocaleString()}}đ
+                            </span>
+                            <span style="font-size: 15px;">{{(1*cartItem.book.salePrice).toLocaleString()}}đ </span>
+                        </div>
+                    </div>
+                    <div class="cart__product-quantity-wrap">
+
+                        <div class="cart__product-quantity">
+                            <button type="button" (click)="minusOneItem(cartItem)"
+                                class="cart__product-quantity-btn">-</button>
+                            <a class="cart__product-quantity-main"> {{cartItem.quantity}}</a>
+                            <button type="button" (click)="addOneItem(cartItem)"
+                                class="cart__product-quantity-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="cart__product-total">
+                        <span> {{(cartItem.quantity*cartItem.book.salePrice).toLocaleString()}}đ</span>
+                    </div>
+                    <div class="cart__product-func">
+
+                        <button type="button" (click)="removeItem(cartItem)" class="cart__product-func-btn">Xóa</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="pay-wrap">
+            <div class="pay">
+                <div class="pay-name">
+                    <input type="checkbox" [(ngModel)]="allChoosed" (change)="selectAllCheckBox()">
+                    <label for="myCheckbox"></label>
+                    <span class="pay-name"> Chọn tất cả</span>
+                </div>
+                <div class="pay-total">
+                    <div class="pay-pop-over">
+                        <div class="pay-pop-over-title">
+                            Tổng sản phẩm thanh toán ({{cartItems.length}} sản phẩm):
+                        </div>
+
+                        <div class="pay-pop-over-sale-title">
+                            <span style="font-size: 1.5rem;"> Tiết kiệm: </span>
+                            <div class="pay-pop-over-sale-money">
+                                {{totalSale.toLocaleString()}}đ
+                            </div>
+                            <div class="pay-pop-over-money">
+                                {{totalPay.toLocaleString() }}đ
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="pay-pop-over-btn-wrap">
+                    <button type="button" (click)="setCartItems()" class="pay-pop-over-btn" aria-disabled="= false">Mua
+                        ngay</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div *ngIf="!cartItems">
+        <div class="no-product">
+
+            Không có sản phẩm nào trong giỏ hàng!
+        </div>
+    </div>
+</div>
