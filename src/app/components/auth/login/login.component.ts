@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
           this.user = response.msg;
           this.toasterService.success("Đăng nhập thành công!");
           localStorage.setItem("user", JSON.stringify(this.user));
+          console.log(this.user)
           this.dataLoaded = true;
 
           this.authService.onRefresh();

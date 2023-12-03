@@ -15,7 +15,6 @@ var createUserControllerfn = async (req, res) => {
     else res.send({ 'status': false, "message": "Tao moi nguoi dung that bai " })
 }
 var loginUserControllerfn = async (req, res) => {
-    var result = null;
     try {
         userService.loginUserDBService(req.body)
             .then(result => {

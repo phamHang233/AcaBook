@@ -14,11 +14,7 @@
 
                                 Admin</a>
                         </li>
-                        <li>
-                            <a href="#" class="header__top-link">
 
-                                {{user.first_name}} {{user.last_name}}</a>
-                        </li>
                         <li>
                             <a href="#" class="header__top-link">
 
@@ -41,20 +37,19 @@
                         </ul>
                     </div>
                     <div *ngIf="isAuthenticated()">
+                        <ul class="header__top-list">
+                            <li>
+                                <a href="#" class="header__top-link">
 
-                        <li class="header__top-item" aria-expanded="false">
-                            <a (click)="logout()" id="auth" type="button" class="header__top-link">Đăng xuất</a>
-                        </li>
+                                    {{user.first_name}} {{user.last_name}}</a>
+                            </li>
 
+                            <li class="header__top-item" aria-expanded="false">
+                                <a (click)="logout()" id="auth" type="button" class="header__top-link">Đăng xuất</a>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- <div *ngIf="isAuthenticated()">
-              <ul class="header__top-list">
-                <li class="header__top-item" aria-expanded="false">
-                  <a id="auth" type="button" class="header__top-link">{{user.firstName}} {{user.lastName}}</a>
-                </li>
-  
-              </ul>
-            </div> -->
+
 
                 </nav>
             </section>
